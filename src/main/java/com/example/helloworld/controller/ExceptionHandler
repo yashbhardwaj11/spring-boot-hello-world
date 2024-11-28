@@ -1,0 +1,8 @@
+@ControllerAdvice
+public class GlobalExceptionHandler {
+    
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleInvalidRequest(IllegalArgumentException e) {
+        return new ResponseEntity<>("Invalid HTTP request", HttpStatus.BAD_REQUEST);
+    }
+}
